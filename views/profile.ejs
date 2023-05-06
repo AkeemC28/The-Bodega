@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>The Bodega</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alkatra&family=Anton&family=Asset&family=Bangers&family=Bodoni+Moda:opsz@6..96&family=Cherry+Cream+Soda&family=Chicle&family=Creepster&family=Delicious+Handrawn&family=Domine&family=Eczar&family=Fjalla+One&family=Fuzzy+Bubbles&family=Gelasio&family=Germania+One&family=Kalam&family=Lato:ital,wght@0,400;1,300&family=Love+Light&family=Orbitron&family=Oswald&family=Oxygen:wght@700&family=Press+Start+2P&family=Questrial&family=Roboto&family=Sedgwick+Ave&family=Tilt+Warp&family=UnifrakturMaguntia&display=swap"
+    rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1>The Bodega</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <!-- <div class="row"> -->
+
+    <!-- LOCAL INFORMATION -->
+
+    <!-- <div class="col-sm-6">
+          <h3>Messages</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span><%= messages[i].name %></span>
+              <span><%= messages[i].msg %></span>
+              <span><%= messages[i].thumbUp %></span>
+              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+          </ul> -->
+
+
+
+  </div>
+
+  <div class="table">
+
+    <h3>Inventory Items</h3>
+
+    <% if (messages.length> 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% messages.forEach(item => { %>
+          <tr>
+            <td><%= item.name %></td>
+            <td>
+              <span class="quantity">
+                <input type="text" value="<%= item.quantity %>">
+              <!-- <button class="ph ph-trash"></button> -->
+              <td>
+                <i class="ph ph-plus-circle"></i>
+                <i class="ph ph-minus-circle"></i>
+              </button>
+            </td>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      
+      <% } else { %>
+        <p>No inventory items found.</p>
+        <% } %>
+
+  </div>
+
+  <% if (messages) { %>
+    <form action="/messages" method="POST" class="inputField">
+      <input type="text" placeholder="name of item" name="name">
+      <input type="text" placeholder="quantity of item" name="quantity">
+      <!-- <input type="file" id="myFile" name="img"> -->
+      <button type="submit" class="inputButton">Submit</button>
+    </form>
+    </div>
+    <% } %>
+      <script src="main.js"></script>
+
+</body>
+
+</html>
